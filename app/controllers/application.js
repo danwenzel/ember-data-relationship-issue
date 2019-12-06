@@ -8,6 +8,7 @@ export default Controller.extend({
 
   actions: {
     async fetchOrCreateUser() {
+      this.set('userIsFetched', false);
       try {
         await this.post.get('user');
       } catch (error) {
