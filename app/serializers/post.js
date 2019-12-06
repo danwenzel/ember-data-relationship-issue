@@ -2,9 +2,8 @@ import RESTSerializer from '@ember-data/serializer/rest';
 
 export default RESTSerializer.extend({
   normalize(typeClass, hash) {
-    debugger;
     hash.links = hash.links || {};
-    hash.links.user = `some-custom-url/users/${hash.id}`;
+    hash.links.user = `/some-custom-url/posts/${hash.id}/user`;
 
     return this._super(typeClass, hash);
   },

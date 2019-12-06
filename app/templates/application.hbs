@@ -1,2 +1,7 @@
 <h1>{{post.title}}</h1>
-<button {{action "badFetch"}}>Fetch User 404</button>
+<button {{action "fetchOrCreateUser"}}>Fetch or Create User</button>
+{{#if userIsFetched}}
+  <h2>this.post.user.name: {{post.user.name}}</h2>
+  <h2>this.post.user.isFulfilled: {{this.post.user.isFulfilled}}</h2>
+  <h2>this.post.user.isRejected: {{this.post.user.isRejected}}</h2>
+{{/if}}
